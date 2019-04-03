@@ -1,4 +1,5 @@
 # Libraries
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 from math import pi
@@ -30,26 +31,28 @@ def radar_chart(df):
     ax.set_theta_direction(-1)
     
     # Draw one axe per variable + add labels labels yet
-    plt.xticks(angles[:-1], categories, size=14)
+    plt.xticks(angles[:-1], categories, size=16)
 
     # Custom for positioning tick labels
     for idx, item in enumerate(ax.get_xticklabels()):
         if idx == 0:
-            item.set_position((0,-.045))
+            item.set_position((0,-.0525))
         elif idx == 1:
-            item.set_position((0,-.065))
+            item.set_position((0,-.08))
         elif idx == 2:
-            item.set_position((0,-.065))
+            item.set_position((0,-.08))
         elif idx == 3:
-            item.set_position((0,-.015))
+            item.set_position((0,-.025))
         elif idx == 4:
-            item.set_position((0,-.045))
+            item.set_position((0,-.06))
 
 
     # Draw ylabels
     ax.set_rlabel_position(0)
-    plt.yticks([0, .25,.5,.75, 1], ["0","0.25","0.50","0.75", "1"], color="grey", size=12)
+    ax.grid(color='#444444')
+    plt.yticks([0, .25,.5,.75, 1], ["0","0.25","0.50","0.75", "1"], color="#323231", size=13)
     plt.ylim(0,1)
+
     
     # ------- PART 2: Add plots
     
